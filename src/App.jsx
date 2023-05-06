@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./Components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import Main from "./components/Main/Main";
+import Navbar from "./Components/Navbar/Navbar.jsx";
+import Hero from "./components/Hero/Hero.jsx";
+import Main from "./components/Main/Main.jsx";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
-import SinglePage from "./components/SinglePage/SinglePage";
-import ServiceReq from "./components/ServiceReq/ServiceReq";
-import Contacts from "./components/Contacts/Contacts";
+import Footer from "./components/Footer/Footer.jsx";
+import SinglePage from "./components/SinglePage/SinglePage.jsx";
+import ServiceReq from "./components/ServiceReq/ServiceReq.jsx";
+import Contacts from "./components/Contacts/Contacts.jsx";
 
 function App() {
   const navigate = useNavigate();
