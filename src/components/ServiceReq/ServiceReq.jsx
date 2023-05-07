@@ -11,8 +11,6 @@ function ServiceReq() {
     });
   }
 
-  console.log(reqs)
-
   return (
     <>
       <div className="main mt-[40px]">

@@ -3,7 +3,7 @@ import logo from "../../../public/assets/images/logo.svg";
 import "remixicon/fonts/remixicon.css";
 import { Link } from "react-router-dom";
 
-function Navbar({ handleCategoryChange }) {
+function Navbar({ handleCategoryChange, likedProducts }) {
   return (
     <div className="flex justify-between items-center p-[20px]">
       <Link className="logo" to='/products'>
@@ -33,12 +33,12 @@ function Navbar({ handleCategoryChange }) {
           </select>
         </div>
         <div className="flex gap-5">
-          <button className="relative">
+          <Link to='/selected' className="relative">
             <i className="ri-heart-line text-[26px] text-[#838383]" />{" "}
             <span className="badge absolute top-0 right-[-7px] text-[15px] text-[white] bg-[#FFA542] rounded-full flex justify-center items-center w-[18px] h-[18px]">
-              2
+              {likedProducts.length}
             </span>
-          </button>
+          </Link>
           <button className="relative">
             <i className="ri-shopping-cart-line text-[26px] text-[#838383]" />{" "}
             <span className="badge absolute top-0 right-[-7px] text-[15px] text-[white] bg-[#FFA542] rounded-full flex justify-center items-center w-[18px] h-[18px]">

@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-function ProductItem(props) {
+function SelectedItem(props) {
   const {
     title,
     image,
@@ -10,34 +11,21 @@ function ProductItem(props) {
     id,
     onLikeButtonClick,
     onRemoveFromSelected,
-    likedProducts,
-    product
+    product,
   } = props;
   const navigate = useNavigate();
-  const [liked, setLiked] = useState(false);
-
-  useEffect(() => {
-    localStorage.setItem('liked', JSON.stringify(liked));
-  }, [liked]);
-
-  useEffect(() => {
-    let like = JSON.parse(localStorage.getItem('liked'));
-    if (!like) {
-     setLiked(like);
-    }
-  }, []);
+  const [liked, setLiked] = useState(true);
 
   const handleClick = () => {
     navigate(`/singleproduct/${id}`);
   };
 
   const handleLikeClick = () => {
-    if (!liked) {
-      onLikeButtonClick(product);
-    } else {
-      onRemoveFromSelected(product);
+    if (liked) {
+      onRemoveFromSelected(product.id);
     }
     setLiked(!liked);
+    toast.success("Product will be removed!!")
   };
 
   return (
@@ -81,4 +69,4 @@ function ProductItem(props) {
   );
 }
 
-export default ProductItem;
+export default SelectedItem;

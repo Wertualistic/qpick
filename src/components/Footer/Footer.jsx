@@ -12,7 +12,7 @@ function Footer() {
         </div>
         <ul className="flex flex-col gap-[10px]">
           <li className="text-[20px] transition-colors hover:text-[#FFA542]">
-            <Link to="/products">Избранное</Link>
+            <Link to="/selected">Избранное</Link>
           </li>
           <li className="text-[20px] transition-colors hover:text-[#FFA542]">
             <Link to="/cart">Корзина</Link>
